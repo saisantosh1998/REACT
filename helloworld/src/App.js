@@ -9,10 +9,12 @@ import FragmentDemo from './components/FragmentDemo';
 import ParentComp from './components/ParentComp';
 import ClickCounterTwo from './components/ClickCounterTwo';
 import HoverCounterTwo from './components/HoverCounterTwo';
+import ComponentC from './components/ComponentC';
+import { UserProvider } from './components/userContext';
 function App() {
   return (
     <div className="App">
-        {
+      {
         /* <Greet name="bruce"><p>props functional children</p></Greet>
         <Welcome name="banner"><p>props class children</p></Welcome>
         <Message></Message> 
@@ -20,8 +22,11 @@ function App() {
         <ParentComponent />
         <FragmentDemo />
         <ParentComp />*/}
-        <Counter render={(count,incrementCount)=>{<ClickCounterTwo count={count} incrementCount={incrementCount}></ClickCounterTwo>}}/>
-        <Counter render={(count,incrementCount)=>{<HoverCounterTwo count={count} incrementCount={incrementCount}></HoverCounterTwo >}}/>
+      {/* <Counter render={(count,incrementCount)=>{<ClickCounterTwo count={count} incrementCount={incrementCount}></ClickCounterTwo>}}/>
+        <Counter render={(count,incrementCount)=>{<HoverCounterTwo count={count} incrementCount={incrementCount}></HoverCounterTwo >}}/> */}
+      <UserProvider value="santosh">
+        <ComponentC />
+      </UserProvider>
     </div>
   );
 }
