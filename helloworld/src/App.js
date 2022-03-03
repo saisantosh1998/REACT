@@ -7,6 +7,8 @@ import ParentComponent from './components/ParentComponent';
 import LifecycleA from './components/LifecycleA';
 import FragmentDemo from './components/FragmentDemo';
 import ParentComp from './components/ParentComp';
+import ClickCounterTwo from './components/ClickCounterTwo';
+import HoverCounterTwo from './components/HoverCounterTwo';
 function App() {
   return (
     <div className="App">
@@ -16,9 +18,10 @@ function App() {
         <Message></Message> 
         <Counter></Counter>
         <ParentComponent />
-        <FragmentDemo />*/
-        <ParentComp />
-        }
+        <FragmentDemo />
+        <ParentComp />*/}
+        <Counter render={(count,incrementCount)=>{<ClickCounterTwo count={count} incrementCount={incrementCount}></ClickCounterTwo>}}/>
+        <Counter render={(count,incrementCount)=>{<HoverCounterTwo count={count} incrementCount={incrementCount}></HoverCounterTwo >}}/>
     </div>
   );
 }
